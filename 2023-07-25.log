@@ -1,0 +1,202 @@
+2023-07-25 00:24:43 error: Branch.getBranch err Error: {"message":"Error event error: Error: We need to know prior auto coverage. ","code":"5003"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: We need to know prior auto coverage. \",\"code\":\"5003\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        \n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            \n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Stephen","lname":"Hutt","address":"708 Worth Boulevard","city":"Pottstown","state":"PA","zip":"19465","dateOfBirth":"1988-02-25"}}} {
+  "fname": "Stephen",
+  "lname": "Hutt",
+  "birthday": "1988-02-25",
+  "address": "708 Worth Boulevard",
+  "city": "Pottstown",
+  "state": "PA",
+  "postalCode": "19465"
+}
+2023-07-25 00:25:01 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "642c6571d10e4bbd69567abb",
+  "link": "jessv",
+  "firstName": "Stephen",
+  "lastName": "Hutt",
+  "birthday": "1988-02-25T00:00:00.000Z",
+  "email": "sbhutt672@comcast.net",
+  "additionalEmail": "",
+  "phone": "4849414453",
+  "applicantIp": "3.209.197.45",
+  "currentAddress": "708 Worth Blvd, Pottstown, PA, USA",
+  "insuranceType": "Home",
+  "selectedPolicies": [
+    "Home"
+  ],
+  "isAnswerRiskQuestions": false
+}
+2023-07-25 00:25:24 error: Branch.getBranch err Error: {"message":"Error event error: Error: We need to know prior auto coverage. ","code":"5003"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: We need to know prior auto coverage. \",\"code\":\"5003\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        $priorAddress: String!\n              $priorCity: String!\n              $priorState: String!\n              $priorZip: String!\n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            priorAddress: {\n                    address: $priorAddress\n                    city: $priorCity\n                    state: $priorState\n                    zip: $priorZip\n                  }\n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Stephen","lname":"Hutt","address":"398 Ellis Woods Road","city":"Pottstown","state":"PA","zip":"19465","dateOfBirth":"1988-02-25","priorAddress":"708 Worth Boulevard","priorCity":"Pottstown","priorState":"PA","priorZip":"19465"}}} {
+  "fname": "Stephen",
+  "lname": "Hutt",
+  "birthday": "1988-02-25",
+  "address": "398 Ellis Woods Road",
+  "city": "Pottstown",
+  "state": "PA",
+  "postalCode": "19465",
+  "mailingAddress": {
+    "address": "708 Worth Boulevard",
+    "state": "PA",
+    "city": "Pottstown",
+    "postalCode": "19465"
+  }
+}
+2023-07-25 00:25:37 info: [object Object]
+2023-07-25 00:27:58 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "642c6571d10e4bbd69567abb",
+  "link": "jessv",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "applicantIp": "3.209.197.45",
+  "currentAddressComponent": {
+    "street": "708 Worth Boulevard",
+    "city": "Pottstown",
+    "state": "PA",
+    "postalCode": "19465",
+    "county": "Chester County",
+    "countryCode": "US"
+  },
+  "propertyAddressComponent": {
+    "street": "398 Ellis Woods Road",
+    "city": "Pottstown",
+    "state": "PA",
+    "postalCode": "19465",
+    "county": "Chester County",
+    "countryCode": "US"
+  },
+  "isAnswerRiskQuestions": false,
+  "householdMembers": [
+    {
+      "firstName": "Stephen",
+      "lastName": "Hutt",
+      "birthday": "1988-02-25T00:00:00.000Z",
+      "license": "28104345",
+      "gender": "Male",
+      "relation": "Primary",
+      "state": ""
+    },
+    {
+      "firstName": "Brittany",
+      "lastName": "Hutt",
+      "birthday": "1986-06-04T04:00:00.000Z",
+      "license": "27496102",
+      "gender": "Female",
+      "relation": "Spouse",
+      "state": ""
+    }
+  ],
+  "householdCars": []
+}
+2023-07-25 00:44:33 error: [POST] /api/service/upload-file >> StatusCode:: 400, Message:: _id & file must provide {
+  "_id": "64bf1ab80aa78ea85c9e48a6",
+  "file": ""
+}
+2023-07-25 00:44:37 error: ServiceRequest.sendCompletedServiceMail Error: Missing destination email
+2023-07-25 01:00:00 info: Running job `sendMailReminderCheckin` at 2023-07-25T01:00:00.063Z
+2023-07-25 01:00:00 info: Running job `removeBillingInformationCheckin` at 2023-07-25T01:00:00.067Z
+2023-07-25 01:00:00 info: Running job `removeBillingInformationCheckin` at 2023-07-25T01:00:00.068Z
+2023-07-25 01:00:00 info: Running job `sendMailReportPeriodDaily` at 2023-07-25T01:00:00.075Z
+2023-07-25 01:30:12 error: Branch.getBranch err Error: {"message":"Error event error: Error: Unable to generate bundle offer with error codes: (50006, 50090) ","code":"5032"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Unable to generate bundle offer with error codes: (50006, 50090) \",\"code\":\"5032\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        \n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            \n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Patrick","lname":"Swanick","address":"1823 Waverly Street","city":"Philadelphia","state":"PA","zip":"19146","dateOfBirth":"1993-10-07"}}} {
+  "fname": "Patrick",
+  "lname": "Swanick",
+  "birthday": "1993-10-07",
+  "address": "1823 Waverly Street",
+  "city": "Philadelphia",
+  "state": "PA",
+  "postalCode": "19146"
+}
+2023-07-25 01:30:17 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6138847d51f3ad28b1a07858",
+  "link": "pete",
+  "firstName": "Patrick",
+  "lastName": "Swanick",
+  "birthday": "1993-10-07T00:00:00.000Z",
+  "email": "pswanick4@yahoo.com",
+  "additionalEmail": "",
+  "phone": "6106391596",
+  "applicantIp": "3.209.197.45",
+  "currentAddress": "1823 Waverly Street, Philadelphia, PA, USA",
+  "insuranceType": "Home",
+  "selectedPolicies": [
+    "Home"
+  ],
+  "isAnswerRiskQuestions": false
+}
+2023-07-25 01:32:18 info: [object Object]
+2023-07-25 01:32:19 error: Branch.getBranch err Error: {"message":"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 50090) ","code":"5032"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 50090) \",\"code\":\"5032\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        $priorAddress: String!\n              $priorCity: String!\n              $priorState: String!\n              $priorZip: String!\n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            priorAddress: {\n                    address: $priorAddress\n                    city: $priorCity\n                    state: $priorState\n                    zip: $priorZip\n                  }\n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Patrick","lname":"Swanick","address":"1930 Waverly Street","city":"Philadelphia","state":"PA","zip":"19146","dateOfBirth":"1993-10-07","priorAddress":"1823 Waverly Street","priorCity":"Philadelphia","priorState":"PA","priorZip":"19146"}}} {
+  "fname": "Patrick",
+  "lname": "Swanick",
+  "birthday": "1993-10-07",
+  "address": "1930 Waverly Street",
+  "city": "Philadelphia",
+  "state": "PA",
+  "postalCode": "19146",
+  "mailingAddress": {
+    "address": "1823 Waverly Street",
+    "state": "PA",
+    "city": "Philadelphia",
+    "postalCode": "19146"
+  }
+}
+2023-07-25 01:37:58 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6138847d51f3ad28b1a07858",
+  "link": "pete",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "applicantIp": "3.209.197.45",
+  "currentAddressComponent": {
+    "street": "1823 Waverly Street",
+    "city": "Philadelphia",
+    "state": "PA",
+    "postalCode": "19146",
+    "county": "Philadelphia County",
+    "countryCode": "US"
+  },
+  "propertyAddressComponent": {
+    "street": "1930 Waverly Street",
+    "city": "Philadelphia",
+    "state": "PA",
+    "postalCode": "19146",
+    "county": "Philadelphia County",
+    "countryCode": "US"
+  },
+  "isAnswerRiskQuestions": false,
+  "householdMembers": [
+    {
+      "firstName": "Patrick",
+      "lastName": "Swanick",
+      "birthday": "1993-10-07T00:00:00.000Z",
+      "license": "",
+      "gender": "Male",
+      "relation": "Primary",
+      "state": ""
+    }
+  ],
+  "householdCars": []
+}
+2023-07-25 01:38:41 error: [POST] /api/get_openly_home >> StatusCode:: 500, Message:: Waiting for element to be located By(css selector, span[data-test='premium-price'])
+Wait timed out after 10173ms {
+  "email": "pswanick4@yahoo.com",
+  "firstName": "Patrick",
+  "lastName": "Swanick",
+  "dob": "1993-10-06",
+  "birthday": "10-06-1993",
+  "address": {
+    "fullAddress": "1930 Waverly Street, Philadelphia, PA, USA",
+    "address": "1930 Waverly Street",
+    "street": "1930 Waverly Street",
+    "state": "PA",
+    "county": "Philadelphia County",
+    "city": "Philadelphia",
+    "postalCode": "19146"
+  },
+  "squareFootage": "913",
+  "numberOfStories": "3",
+  "numberOfFullBathrooms": 2,
+  "yearBuilt": "1800",
+  "roofAge": 2004,
+  "roofType": "ThreeTab",
+  "roofShape": "Flat",
+  "buildingMaterial": "WoodFrameMasonry",
+  "hasBasement": false,
+  "swimmingPool": false,
+  "userId": "6138847d51f3ad28b1a07858",
+  "roofYear": 2004
+}
+2023-07-25 03:50:46 error: [GET] /user/detail/by-link/pricing >> StatusCode:: 400, Message:: User not exist {}
