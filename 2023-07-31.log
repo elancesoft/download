@@ -1,0 +1,544 @@
+2023-07-31 01:00:00 info: Running job `sendMailReminderCheckin` at 2023-07-31T01:00:00.913Z
+2023-07-31 01:00:00 info: Running job `removeBillingInformationCheckin` at 2023-07-31T01:00:00.917Z
+2023-07-31 01:00:00 info: Running job `removeBillingInformationCheckin` at 2023-07-31T01:00:00.919Z
+2023-07-31 01:00:00 info: Running job `sendMailReportPeriodDaily` at 2023-07-31T01:00:00.921Z
+2023-07-31 01:40:46 error: Branch.getBranch err Error: {"message":"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). ","code":"5008"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). \",\"code\":\"5008\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        \n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            \n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Logan","lname":"Sweeting","address":"18 Barren Meadow Lane","city":"Howell Township","state":"NJ","zip":"07731","dateOfBirth":"1992-07-28"}}} {
+  "fname": "Logan",
+  "lname": "Sweeting",
+  "birthday": "1992-07-28",
+  "address": "18 Barren Meadow Lane",
+  "city": "Howell Township",
+  "state": "NJ",
+  "postalCode": "07731"
+}
+2023-07-31 01:41:22 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6138655051f3ad28b1a0782d",
+  "link": "tj",
+  "firstName": "Logan",
+  "lastName": "Sweeting",
+  "birthday": "1992-07-28T00:00:00.000Z",
+  "email": "Logans712@gmail.com",
+  "additionalEmail": "",
+  "phone": "5754301446",
+  "applicantIp": "3.209.197.45",
+  "currentAddress": "18 Barren Meadow Lane, Howell Township, NJ, USA",
+  "insuranceType": "Home",
+  "selectedPolicies": [
+    "Home"
+  ],
+  "isAnswerRiskQuestions": false
+}
+2023-07-31 01:41:58 error: Branch.getBranch err Error: {"message":"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). ","code":"5008"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). \",\"code\":\"5008\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        $priorAddress: String!\n              $priorCity: String!\n              $priorState: String!\n              $priorZip: String!\n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            priorAddress: {\n                    address: $priorAddress\n                    city: $priorCity\n                    state: $priorState\n                    zip: $priorZip\n                  }\n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Logan","lname":"Sweeting","address":"812 South Main Street","city":"Monroe","state":"NJ","zip":"08094","dateOfBirth":"1992-07-28","priorAddress":"18 Barren Meadow Lane","priorCity":"Howell Township","priorState":"NJ","priorZip":"07731"}}} {
+  "fname": "Logan",
+  "lname": "Sweeting",
+  "birthday": "1992-07-28",
+  "address": "812 South Main Street",
+  "city": "Monroe",
+  "state": "NJ",
+  "postalCode": "08094",
+  "mailingAddress": {
+    "address": "18 Barren Meadow Lane",
+    "state": "NJ",
+    "city": "Howell Township",
+    "postalCode": "07731"
+  }
+}
+2023-07-31 01:45:36 info: [object Object]
+2023-07-31 02:05:28 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6138655051f3ad28b1a0782d",
+  "link": "tj",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "applicantIp": "3.209.197.45",
+  "currentAddressComponent": {
+    "street": "18 Barren Meadow Lane",
+    "city": "Howell Township",
+    "state": "NJ",
+    "postalCode": "07731",
+    "county": "Monmouth County",
+    "countryCode": "US"
+  },
+  "propertyAddressComponent": {
+    "street": "812 South Main Street",
+    "city": "Monroe",
+    "state": "NJ",
+    "postalCode": "08094",
+    "county": "Gloucester County",
+    "countryCode": "US"
+  },
+  "isAnswerRiskQuestions": false,
+  "householdMembers": [
+    {
+      "firstName": "Logan",
+      "lastName": "Sweeting",
+      "birthday": "1992-07-28T00:00:00.000Z",
+      "license": "Yes",
+      "gender": "Male",
+      "relation": "Primary",
+      "state": ""
+    },
+    {
+      "firstName": "Stephanie",
+      "lastName": "Sweeting",
+      "birthday": "1992-04-16T04:00:00.000Z",
+      "license": "No",
+      "gender": "Female",
+      "relation": "Spouse",
+      "state": ""
+    },
+    {
+      "firstName": "Olivia",
+      "lastName": "Sweeting",
+      "birthday": "2012-12-12T05:00:00.000Z",
+      "license": "No",
+      "gender": "Female",
+      "relation": "Child",
+      "state": ""
+    },
+    {
+      "firstName": "Amelia",
+      "lastName": "Sweeting",
+      "birthday": "2015-01-16T05:00:00.000Z",
+      "license": "No",
+      "gender": "Female",
+      "relation": "Child",
+      "state": ""
+    },
+    {
+      "firstName": "Arabella",
+      "lastName": "Sweeting",
+      "birthday": "2017-06-22T04:00:00.000Z",
+      "license": "No",
+      "gender": "Female",
+      "relation": "Child",
+      "state": ""
+    },
+    {
+      "firstName": "Dawn",
+      "lastName": "Maas",
+      "birthday": "1967-07-29T04:00:00.000Z",
+      "license": "Yes",
+      "gender": "Female",
+      "relation": "Relative",
+      "state": ""
+    }
+  ],
+  "householdCars": []
+}
+2023-07-31 02:07:10 error: InsuranceQuoteService.requestFormApply send to ggsheet Error: Request failed with status code 404
+2023-07-31 03:49:18 error: Branch.getBranch err Error: {"message":"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 20004) ","code":"5032"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 20004) \",\"code\":\"5032\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        \n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            \n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Adrienne ","lname":"Michalek ","address":"28W740 Army Trail Road","city":"West Chicago","state":"IL","zip":"60185","dateOfBirth":"1973-01-21"}}} {
+  "fname": "Adrienne ",
+  "lname": "Michalek ",
+  "birthday": "1973-01-21",
+  "address": "28W740 Army Trail Road",
+  "city": "West Chicago",
+  "state": "IL",
+  "postalCode": "60185"
+}
+2023-07-31 03:49:27 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6449747e73caa0f05f66756c",
+  "link": "prairie",
+  "firstName": "Adrienne ",
+  "lastName": "Michalek ",
+  "birthday": "1973-01-21T00:00:00.000Z",
+  "email": "amichalek@kw.com",
+  "additionalEmail": "",
+  "phone": "6302723698",
+  "applicantIp": "3.209.197.45",
+  "currentAddress": "28W740 Army Trail Road, West Chicago, IL, USA",
+  "insuranceType": "Bundle",
+  "selectedPolicies": [
+    "Auto",
+    "Home"
+  ],
+  "isAnswerRiskQuestions": false
+}
+2023-07-31 03:50:41 error: Branch.getBranch err Error: {"message":"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 20004) ","code":"5032"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 20004) \",\"code\":\"5032\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        $priorAddress: String!\n              $priorCity: String!\n              $priorState: String!\n              $priorZip: String!\n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            priorAddress: {\n                    address: $priorAddress\n                    city: $priorCity\n                    state: $priorState\n                    zip: $priorZip\n                  }\n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Adrienne ","lname":"Michalek ","address":"28W740 Army Trail Road","city":"West Chicago","state":"IL","zip":"60185","dateOfBirth":"1973-01-21","priorAddress":"28W740 Army Trail Road","priorCity":"West Chicago","priorState":"IL","priorZip":"60185"}}} {
+  "fname": "Adrienne ",
+  "lname": "Michalek ",
+  "birthday": "1973-01-21",
+  "address": "28W740 Army Trail Road",
+  "city": "West Chicago",
+  "state": "IL",
+  "postalCode": "60185",
+  "mailingAddress": {
+    "address": "28W740 Army Trail Road",
+    "state": "IL",
+    "city": "West Chicago",
+    "postalCode": "60185"
+  }
+}
+2023-07-31 03:50:58 info: [object Object]
+2023-07-31 03:52:47 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6449747e73caa0f05f66756c",
+  "link": "prairie",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "applicantIp": "3.209.197.45",
+  "currentAddressComponent": {
+    "street": "28W740 Army Trail Road",
+    "city": "West Chicago",
+    "state": "IL",
+    "postalCode": "60185",
+    "county": "DuPage County",
+    "countryCode": "US"
+  },
+  "propertyAddressComponent": {
+    "street": "28W740 Army Trail Road",
+    "city": "West Chicago",
+    "state": "IL",
+    "postalCode": "60185",
+    "county": "DuPage County",
+    "countryCode": "US"
+  },
+  "isAnswerRiskQuestions": false,
+  "householdMembers": [
+    {
+      "firstName": "Adrienne ",
+      "lastName": "Michalek ",
+      "birthday": "1973-01-21T00:00:00.000Z",
+      "license": "",
+      "gender": "Female",
+      "relation": "Primary",
+      "state": ""
+    }
+  ],
+  "householdCars": []
+}
+2023-07-31 03:56:17 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6449747e73caa0f05f66756c",
+  "link": "prairie",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "applicantIp": "3.209.197.45",
+  "currentAddressComponent": {
+    "street": "28W740 Army Trail Road",
+    "city": "West Chicago",
+    "state": "IL",
+    "postalCode": "60185",
+    "county": "DuPage County",
+    "countryCode": "US"
+  },
+  "propertyAddressComponent": {
+    "street": "28W740 Army Trail Road",
+    "city": "West Chicago",
+    "state": "IL",
+    "postalCode": "60185",
+    "county": "DuPage County",
+    "countryCode": "US"
+  },
+  "isAnswerRiskQuestions": false,
+  "householdMembers": [
+    {
+      "firstName": "Adrienne ",
+      "lastName": "Michalek ",
+      "birthday": "1973-01-21T00:00:00.000Z",
+      "license": "",
+      "gender": "Female",
+      "relation": "Primary",
+      "state": ""
+    },
+    {
+      "firstName": "Mary Jean",
+      "lastName": "Cravens",
+      "birthday": "1974-05-08T05:00:00.000Z",
+      "license": "",
+      "gender": "Female",
+      "relation": "Partner",
+      "state": ""
+    }
+  ],
+  "householdCars": [
+    {
+      "year": 2016,
+      "make": "JEEP",
+      "model": "Renegade ",
+      "vin": ""
+    },
+    {
+      "year": 2016,
+      "make": "MINI",
+      "model": "Clubman ",
+      "vin": ""
+    }
+  ]
+}
+2023-07-31 07:00:00 info: Running job `sendMailReminderCheckin` at 2023-07-31T07:00:00.138Z
+2023-07-31 13:00:00 info: Running job `sendMailReminderCheckin` at 2023-07-31T13:00:00.243Z
+2023-07-31 13:00:00 info: Running job `removeBillingInformationCheckin` at 2023-07-31T13:00:00.246Z
+2023-07-31 13:00:00 info: Running job `removeBillingInformationCheckin` at 2023-07-31T13:00:00.247Z
+2023-07-31 13:34:10 error: Branch.getBranch err Error: {"message":"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). ","code":"5008"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). \",\"code\":\"5008\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        \n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            \n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Joe","lname":"TICTESTONE","address":"27 Mine Street","city":"Flemington","state":"NJ","zip":"08822","dateOfBirth":"1940-02-29"}}} {
+  "fname": "Joe",
+  "lname": "TICTESTONE",
+  "birthday": "1940-02-29",
+  "address": "27 Mine Street",
+  "city": "Flemington",
+  "state": "NJ",
+  "postalCode": "08822"
+}
+2023-07-31 13:34:13 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "630709a95aaf8069ba9ad277",
+  "link": "travelerstest",
+  "firstName": "Joe",
+  "lastName": "TICTESTONE",
+  "birthday": "1940-02-29T00:00:00.000Z",
+  "email": "pigatewaytest@travelers.com",
+  "additionalEmail": "",
+  "phone": "8602775555",
+  "applicantIp": "3.209.197.45",
+  "currentAddress": "27 Mine St, Flemington, NJ, USA",
+  "insuranceType": "Bundle",
+  "selectedPolicies": [
+    "Auto",
+    "Home"
+  ],
+  "isAnswerRiskQuestions": false
+}
+2023-07-31 13:34:25 error: Branch.getBranch err Error: {"message":"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). ","code":"5008"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). \",\"code\":\"5008\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        $priorAddress: String!\n              $priorCity: String!\n              $priorState: String!\n              $priorZip: String!\n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            priorAddress: {\n                    address: $priorAddress\n                    city: $priorCity\n                    state: $priorState\n                    zip: $priorZip\n                  }\n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Joe","lname":"TICTESTONE","address":"27 Mine Street","city":"Flemington","state":"NJ","zip":"08822","dateOfBirth":"1940-02-29","priorAddress":"27 Mine Street","priorCity":"Flemington","priorState":"NJ","priorZip":"08822"}}} {
+  "fname": "Joe",
+  "lname": "TICTESTONE",
+  "birthday": "1940-02-29",
+  "address": "27 Mine Street",
+  "city": "Flemington",
+  "state": "NJ",
+  "postalCode": "08822",
+  "mailingAddress": {
+    "address": "27 Mine Street",
+    "state": "NJ",
+    "city": "Flemington",
+    "postalCode": "08822"
+  }
+}
+2023-07-31 13:34:28 info: [object Object]
+2023-07-31 13:35:02 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "630709a95aaf8069ba9ad277",
+  "link": "travelerstest",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "applicantIp": "3.209.197.45",
+  "currentAddressComponent": {
+    "street": "27 Mine Street",
+    "city": "Flemington",
+    "state": "NJ",
+    "postalCode": "08822",
+    "county": "Hunterdon County",
+    "countryCode": "US"
+  },
+  "propertyAddressComponent": {
+    "street": "27 Mine Street",
+    "city": "Flemington",
+    "state": "NJ",
+    "postalCode": "08822",
+    "county": "Hunterdon County",
+    "countryCode": "US"
+  },
+  "isAnswerRiskQuestions": false,
+  "householdMembers": [
+    {
+      "firstName": "Joe",
+      "lastName": "TICTESTONE",
+      "birthday": "1940-02-29T00:00:00.000Z",
+      "license": "RF4444",
+      "gender": "Male",
+      "relation": "Primary",
+      "state": ""
+    }
+  ],
+  "householdCars": []
+}
+2023-07-31 13:49:41 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6138847d51f3ad28b1a07858",
+  "link": "pete",
+  "firstName": "Jacquelyne",
+  "lastName": "Berrier",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "email": "JAXSYB@GMAIL.COM",
+  "additionalEmail": "",
+  "phone": "4848812598",
+  "applicantIp": "3.209.197.45",
+  "currentAddress": "91 WANDA WAY, E FALLOWFIELD, PA, 193201960",
+  "currentAddressComponent": {
+    "street": "91 Wanda Way",
+    "city": "Sarver",
+    "county": "Butler County",
+    "state": "PA",
+    "postalCode": "16055",
+    "countryCode": "US"
+  },
+  "insuranceType": "Bundle",
+  "selectedPolicies": [
+    "Auto",
+    "Home"
+  ],
+  "isAnswerRiskQuestions": false,
+  "currentPremiums": [
+    {
+      "key": "6ec4cc94-99c5-4aac-bd98-d42ddd64f895",
+      "policyType": "Auto",
+      "amount": 639,
+      "term": "Yearly"
+    }
+  ],
+  "carrierType": "statefarm",
+  "canopyPullId": "c5b96e6e-1af8-45d0-b5ac-21c42bb032b5"
+}
+2023-07-31 13:50:52 error: Branch.getBranch err Error: Variable "$priorCity" of required type "String!" was not provided.: {"response":{"errors":[{"message":"Variable \"$priorCity\" of required type \"String!\" was not provided.","locations":[{"line":11,"column":15}],"extensions":{"code":"BAD_USER_INPUT"}},{"message":"Variable \"$priorState\" of required type \"String!\" was not provided.","locations":[{"line":12,"column":15}],"extensions":{"code":"BAD_USER_INPUT"}},{"message":"Variable \"$priorZip\" of required type \"String!\" was not provided.","locations":[{"line":13,"column":15}],"extensions":{"code":"BAD_USER_INPUT"}}],"status":400,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        $priorAddress: String!\n              $priorCity: String!\n              $priorState: String!\n              $priorZip: String!\n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            priorAddress: {\n                    address: $priorAddress\n                    city: $priorCity\n                    state: $priorState\n                    zip: $priorZip\n                  }\n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Jacquelyne","lname":"Berrier","address":"233 Kennedy Drive","city":"Coatesville","state":"PA","zip":"19320","dateOfBirth":"2023-07-31","priorAddress":"undefined undefined"}}} {
+  "fname": "Jacquelyne",
+  "lname": "Berrier",
+  "birthday": "2023-07-31",
+  "address": "233 Kennedy Drive",
+  "city": "Coatesville",
+  "state": "PA",
+  "postalCode": "19320",
+  "mailingAddress": {
+    "address": "undefined undefined"
+  }
+}
+2023-07-31 13:50:57 info: [object Object]
+2023-07-31 13:53:15 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6138847d51f3ad28b1a07858",
+  "link": "pete",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "applicantIp": "3.209.197.45",
+  "currentAddressComponent": {
+    "street": " ",
+    "city": "",
+    "state": "",
+    "postalCode": "",
+    "county": "",
+    "countryCode": ""
+  },
+  "propertyAddressComponent": {
+    "street": "233 Kennedy Drive",
+    "city": "Coatesville",
+    "state": "PA",
+    "postalCode": "19320",
+    "county": "Chester County",
+    "countryCode": "US"
+  },
+  "isAnswerRiskQuestions": false,
+  "householdMembers": [
+    {
+      "firstName": "Jacquelyne",
+      "lastName": "Berrier",
+      "birthday": "2023-08-23T17:52:54.000Z",
+      "license": "",
+      "gender": "Female",
+      "relation": "Primary",
+      "state": ""
+    }
+  ],
+  "householdCars": []
+}
+2023-07-31 13:53:45 error: [POST] /api/get_openly_home >> StatusCode:: 500, Message:: Waiting for element to be located By(xpath, //select[@data-test='stories-select']/option[@value='Two'])
+Wait timed out after 10015ms {
+  "email": "JAXSYB@GMAIL.COM",
+  "firstName": "Jacquelyne",
+  "lastName": "Berrier",
+  "dob": "2023-07-31",
+  "birthday": "07-31-2023",
+  "address": {
+    "fullAddress": "233 Kennedy Drive, Coatesville, PA, USA",
+    "address": "233 Kennedy Drive",
+    "street": "233 Kennedy Drive",
+    "state": "PA",
+    "county": "Chester County",
+    "city": "Coatesville",
+    "postalCode": "19320"
+  },
+  "squareFootage": "1738",
+  "numberOfStories": "2",
+  "numberOfFullBathrooms": 2,
+  "yearBuilt": "2014",
+  "roofAge": 2004,
+  "roofType": "ThreeTab",
+  "roofShape": "Gable",
+  "buildingMaterial": "WoodFrameMasonry",
+  "hasBasement": false,
+  "swimmingPool": false,
+  "userId": "6138847d51f3ad28b1a07858",
+  "roofYear": 2004
+}
+2023-07-31 14:33:58 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6289e82a582309072346b228",
+  "link": "zozolo",
+  "firstName": "david",
+  "lastName": "marsh",
+  "birthday": "1987-05-03T00:00:00.000Z",
+  "email": "123@qwe.com",
+  "additionalEmail": "",
+  "phone": "2223334455",
+  "applicantIp": "3.209.197.45",
+  "currentAddress": "502 Hannah Penn Court, West Chester, PA, USA",
+  "insuranceType": "Auto",
+  "selectedPolicies": [
+    "Auto",
+    "Umbrella"
+  ],
+  "isAnswerRiskQuestions": false
+}
+2023-07-31 14:34:04 error: Branch.getBranch err Error: {"message":"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 50090) ","code":"5032"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 50090) \",\"code\":\"5032\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        \n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            \n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"david","lname":"marsh","address":"502 Hannah Penn Court","city":"West Chester","state":"PA","zip":"19382","dateOfBirth":"1987-05-03"}}} {
+  "fname": "david",
+  "lname": "marsh",
+  "birthday": "1987-05-03",
+  "address": "502 Hannah Penn Court",
+  "city": "West Chester",
+  "state": "PA",
+  "postalCode": "19382"
+}
+2023-07-31 14:34:41 error: Branch.getBranch err Error: {"message":"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 50090) ","code":"5032"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 50090) \",\"code\":\"5032\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        \n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            \n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"david","lname":"marsh","address":"502 Hannah Penn Court","city":"West Chester","state":"PA","zip":"19382","dateOfBirth":"1987-05-03"}}} {
+  "fname": "david",
+  "lname": "marsh",
+  "birthday": "1987-05-03",
+  "address": "502 Hannah Penn Court",
+  "city": "West Chester",
+  "state": "PA",
+  "postalCode": "19382"
+}
+2023-07-31 14:34:56 error: Branch.getBranch err Error: {"message":"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 50090) ","code":"5032"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Unable to generate bundle offer with error codes: (50005, 50090) \",\"code\":\"5032\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        $priorAddress: String!\n              $priorCity: String!\n              $priorState: String!\n              $priorZip: String!\n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            priorAddress: {\n                    address: $priorAddress\n                    city: $priorCity\n                    state: $priorState\n                    zip: $priorZip\n                  }\n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"david","lname":"marsh","address":"502 Hannah Penn Court","city":"West Chester","state":"PA","zip":"19382","dateOfBirth":"1987-05-03","priorAddress":"502 Hannah Penn Court","priorCity":"West Chester","priorState":"PA","priorZip":"19382"}}} {
+  "fname": "david",
+  "lname": "marsh",
+  "birthday": "1987-05-03",
+  "address": "502 Hannah Penn Court",
+  "city": "West Chester",
+  "state": "PA",
+  "postalCode": "19382",
+  "mailingAddress": {
+    "address": "502 Hannah Penn Court",
+    "state": "PA",
+    "city": "West Chester",
+    "postalCode": "19382"
+  }
+}
+2023-07-31 14:34:58 info: [object Object]
+2023-07-31 14:35:21 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6289e82a582309072346b228",
+  "link": "zozolo",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "applicantIp": "3.209.197.45",
+  "currentAddressComponent": {
+    "street": "502 Hannah Penn Court",
+    "city": "West Chester",
+    "state": "PA",
+    "postalCode": "19382",
+    "county": "Chester County",
+    "countryCode": "US"
+  },
+  "propertyAddressComponent": {
+    "street": "502 Hannah Penn Court",
+    "city": "West Chester",
+    "state": "PA",
+    "postalCode": "19382",
+    "county": "Chester County",
+    "countryCode": "US"
+  },
+  "isAnswerRiskQuestions": false,
+  "householdMembers": [
+    {
+      "firstName": "david",
+      "lastName": "marsh",
+      "birthday": "1987-05-03T00:00:00.000Z",
+      "license": "",
+      "gender": "Male",
+      "relation": "Primary",
+      "state": ""
+    }
+  ],
+  "householdCars": []
+}

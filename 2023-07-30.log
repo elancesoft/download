@@ -1,0 +1,357 @@
+2023-07-30 01:00:00 info: Running job `sendMailReminderCheckin` at 2023-07-30T01:00:00.309Z
+2023-07-30 01:00:00 info: Running job `removeBillingInformationCheckin` at 2023-07-30T01:00:00.314Z
+2023-07-30 01:00:00 info: Running job `removeBillingInformationCheckin` at 2023-07-30T01:00:00.316Z
+2023-07-30 01:00:00 info: Running job `sendMailReportPeriodDaily` at 2023-07-30T01:00:00.317Z
+2023-07-30 02:06:47 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6138847d51f3ad28b1a07858",
+  "link": "pete",
+  "firstName": "Kelly",
+  "lastName": "McClure",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "email": "krm5386@gmail.com",
+  "additionalEmail": "",
+  "phone": "4122605243",
+  "applicantIp": "3.209.197.45",
+  "currentAddress": "300 E Evans St, Apt P157, West Chester, PA 19380",
+  "currentAddressComponent": {
+    "street": "300 East Evans Street",
+    "city": "West Chester",
+    "county": "Chester County",
+    "state": "PA",
+    "postalCode": "19380",
+    "countryCode": "US"
+  },
+  "insuranceType": "Bundle",
+  "selectedPolicies": [
+    "Auto",
+    "Home"
+  ],
+  "isAnswerRiskQuestions": false,
+  "currentPremiums": [
+    {
+      "key": "4d85b0ae-5594-4973-97ac-067f17a33147",
+      "policyType": "Auto",
+      "amount": 762,
+      "term": "Yearly"
+    },
+    {
+      "key": "ab4c8834-7e75-4fc5-be25-786587868ccc",
+      "policyType": "Home",
+      "amount": 0,
+      "term": "Yearly"
+    },
+    {
+      "key": "fce9a1a0-7fc8-47fb-87dd-c7387f3d8ebc",
+      "policyType": "Auto",
+      "amount": 0,
+      "term": "Yearly"
+    }
+  ],
+  "carrierType": "travelers",
+  "canopyPullId": "f57ef0ef-1a48-44ab-960f-9ea0d071d69c"
+}
+2023-07-30 02:08:32 error: Branch.getBranch err Error: Variable "$priorCity" of required type "String!" was not provided.: {"response":{"errors":[{"message":"Variable \"$priorCity\" of required type \"String!\" was not provided.","locations":[{"line":11,"column":15}],"extensions":{"code":"BAD_USER_INPUT"}},{"message":"Variable \"$priorState\" of required type \"String!\" was not provided.","locations":[{"line":12,"column":15}],"extensions":{"code":"BAD_USER_INPUT"}},{"message":"Variable \"$priorZip\" of required type \"String!\" was not provided.","locations":[{"line":13,"column":15}],"extensions":{"code":"BAD_USER_INPUT"}}],"status":400,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        $priorAddress: String!\n              $priorCity: String!\n              $priorState: String!\n              $priorZip: String!\n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            priorAddress: {\n                    address: $priorAddress\n                    city: $priorCity\n                    state: $priorState\n                    zip: $priorZip\n                  }\n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Kelly","lname":"McClure","address":"386 East Nields Street","city":"West Chester","state":"PA","zip":"19382","dateOfBirth":"2023-07-30","priorAddress":"undefined undefined"}}} {
+  "fname": "Kelly",
+  "lname": "McClure",
+  "birthday": "2023-07-30",
+  "address": "386 East Nields Street",
+  "city": "West Chester",
+  "state": "PA",
+  "postalCode": "19382",
+  "mailingAddress": {
+    "address": "undefined undefined"
+  }
+}
+2023-07-30 02:09:10 info: [object Object]
+2023-07-30 02:12:37 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6138847d51f3ad28b1a07858",
+  "link": "pete",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "applicantIp": "3.209.197.45",
+  "currentAddressComponent": {
+    "street": " ",
+    "city": "",
+    "state": "",
+    "postalCode": "",
+    "county": "",
+    "countryCode": ""
+  },
+  "propertyAddressComponent": {
+    "street": "386 East Nields Street",
+    "city": "West Chester",
+    "state": "PA",
+    "postalCode": "19382",
+    "county": "Chester County",
+    "countryCode": "US"
+  },
+  "isAnswerRiskQuestions": false,
+  "householdMembers": [
+    {
+      "firstName": "Kelly",
+      "lastName": "McClure",
+      "birthday": "1993-04-18T06:11:13.000Z",
+      "license": "30036023",
+      "gender": "Female",
+      "relation": "Primary",
+      "state": ""
+    }
+  ],
+  "householdCars": []
+}
+2023-07-30 02:13:08 error: [POST] /api/get_openly_home >> StatusCode:: 500, Message:: Waiting for element to be located By(xpath, //select[@data-test='stories-select']/option[@value='Two'])
+Wait timed out after 10005ms {
+  "email": "krm5386@gmail.com",
+  "firstName": "Kelly",
+  "lastName": "McClure",
+  "dob": "2023-07-29",
+  "birthday": "07-29-2023",
+  "address": {
+    "fullAddress": "386 East Nields Street, West Chester, PA, USA",
+    "address": "386 East Nields Street",
+    "street": "386 East Nields Street",
+    "state": "PA",
+    "county": "Chester County",
+    "city": "West Chester",
+    "postalCode": "19382"
+  },
+  "squareFootage": "1064",
+  "numberOfStories": "2",
+  "numberOfFullBathrooms": 1,
+  "yearBuilt": "1900",
+  "roofAge": 2019,
+  "roofType": "ThreeTab",
+  "roofShape": "Gable",
+  "buildingMaterial": "WoodFrameMasonry",
+  "hasBasement": false,
+  "swimmingPool": false,
+  "userId": "6138847d51f3ad28b1a07858",
+  "roofYear": 2019
+}
+2023-07-30 07:00:00 info: Running job `sendMailReminderCheckin` at 2023-07-30T07:00:00.549Z
+2023-07-30 13:00:00 info: Running job `sendMailReminderCheckin` at 2023-07-30T13:00:00.759Z
+2023-07-30 13:00:00 info: Running job `removeBillingInformationCheckin` at 2023-07-30T13:00:00.761Z
+2023-07-30 13:00:00 info: Running job `removeBillingInformationCheckin` at 2023-07-30T13:00:00.763Z
+2023-07-30 17:26:19 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6138640f51f3ad28b1a07827",
+  "link": "neil",
+  "firstName": "GUEY-SHENG",
+  "lastName": "DENG",
+  "birthday": "1948-09-19T00:00:00.000Z",
+  "email": "gdeng2000@gmail.com",
+  "additionalEmail": "",
+  "phone": "8016942946",
+  "applicantIp": "3.209.197.45",
+  "currentAddress": "2604 CRUISE BAY CT, COTTONWOOD HEIGHTS, UT, 84121, UNITED STATES",
+  "currentAddressComponent": {
+    "street": "2604 East 6795 South",
+    "city": "Cottonwood Heights",
+    "county": "Salt Lake County",
+    "state": "UT",
+    "postalCode": "84121",
+    "countryCode": "US"
+  },
+  "insuranceType": "Bundle",
+  "selectedPolicies": [
+    "Auto",
+    "Home",
+    "Umbrella"
+  ],
+  "isAnswerRiskQuestions": false,
+  "currentPremiums": [
+    {
+      "key": "8609bb1e-bf07-40d7-8d7b-6a348a8ee2ec",
+      "policyType": "Home",
+      "amount": 1287,
+      "term": "Yearly"
+    },
+    {
+      "key": "68bde617-e135-49af-b0d1-b0e4a8ef12c6",
+      "policyType": "Auto",
+      "amount": 1235,
+      "term": "Yearly"
+    }
+  ],
+  "carrierType": "farmers",
+  "canopyPullId": "51b6eb42-0a2e-4183-94e2-4402ab835e2a"
+}
+2023-07-30 17:28:07 error: Branch.getBranch err Error: Variable "$priorCity" of required type "String!" was not provided.: {"response":{"errors":[{"message":"Variable \"$priorCity\" of required type \"String!\" was not provided.","locations":[{"line":11,"column":15}],"extensions":{"code":"BAD_USER_INPUT"}},{"message":"Variable \"$priorState\" of required type \"String!\" was not provided.","locations":[{"line":12,"column":15}],"extensions":{"code":"BAD_USER_INPUT"}},{"message":"Variable \"$priorZip\" of required type \"String!\" was not provided.","locations":[{"line":13,"column":15}],"extensions":{"code":"BAD_USER_INPUT"}}],"status":400,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        $priorAddress: String!\n              $priorCity: String!\n              $priorState: String!\n              $priorZip: String!\n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            priorAddress: {\n                    address: $priorAddress\n                    city: $priorCity\n                    state: $priorState\n                    zip: $priorZip\n                  }\n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"GUEY-SHENG","lname":"DENG","address":"undefined East 6795 South","city":"Cottonwood Heights","state":"UT","zip":"84121","dateOfBirth":"1948-09-19","priorAddress":"undefined undefined"}}} {
+  "fname": "GUEY-SHENG",
+  "lname": "DENG",
+  "birthday": "1948-09-19",
+  "address": "undefined East 6795 South",
+  "city": "Cottonwood Heights",
+  "state": "UT",
+  "postalCode": "84121",
+  "mailingAddress": {
+    "address": "undefined undefined"
+  }
+}
+2023-07-30 17:29:32 info: [object Object]
+2023-07-30 17:37:23 error: [POST] /api/get_openly_home >> StatusCode:: 500, Message:: each key must be a number or string; got undefined {
+  "email": "gdeng2000@gmail.com",
+  "firstName": "GUEY-SHENG",
+  "lastName": "DENG",
+  "dob": "1948-09-18",
+  "birthday": "09-18-1948",
+  "address": {
+    "fullAddress": "Cruise Bay Court, Cottonwood Heights, UT, USA",
+    "address": " East 6795 South",
+    "street": " East 6795 South",
+    "state": "UT",
+    "county": "Salt Lake County",
+    "city": "Cottonwood Heights",
+    "postalCode": "84121"
+  },
+  "squareFootage": "3100",
+  "numberOfStories": "2",
+  "numberOfFullBathrooms": 0,
+  "yearBuilt": "1993",
+  "roofAge": 2004,
+  "roofType": "ThreeTab",
+  "roofShape": "Gable",
+  "buildingMaterial": "WoodFrameMasonry",
+  "hasBasement": false,
+  "swimmingPool": false,
+  "userId": "6138640f51f3ad28b1a07827",
+  "roofYear": 2004
+}
+2023-07-30 17:37:24 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "6138640f51f3ad28b1a07827",
+  "link": "neil",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "applicantIp": "3.209.197.45",
+  "currentAddressComponent": {
+    "street": " ",
+    "city": "",
+    "state": "",
+    "postalCode": "",
+    "county": "",
+    "countryCode": ""
+  },
+  "propertyAddressComponent": {
+    "street": " East 6795 South",
+    "city": "Cottonwood Heights",
+    "state": "UT",
+    "postalCode": "84121",
+    "county": "Salt Lake County",
+    "countryCode": "US"
+  },
+  "isAnswerRiskQuestions": false,
+  "householdMembers": [
+    {
+      "firstName": "GUEY-SHENG",
+      "lastName": "DENG",
+      "birthday": "1948-09-19T00:00:00.000Z",
+      "license": "002913398 Utah",
+      "gender": "Male",
+      "relation": "Primary",
+      "state": ""
+    },
+    {
+      "firstName": "Tung-Ling",
+      "lastName": "Deng",
+      "birthday": "1950-07-17T07:00:00.000Z",
+      "license": "002913403 Utah",
+      "gender": "Female",
+      "relation": "Spouse",
+      "state": ""
+    },
+    {
+      "firstName": "Julie",
+      "lastName": "Deng",
+      "birthday": "1985-07-12T06:00:00.000Z",
+      "license": "174640938 Utah",
+      "gender": "Female",
+      "relation": "Child",
+      "state": ""
+    }
+  ],
+  "householdCars": []
+}
+2023-07-30 19:00:00 info: Running job `sendMailReminderCheckin` at 2023-07-30T19:00:00.062Z
+2023-07-30 20:40:56 error: Branch.getBranch err Error: {"message":"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). ","code":"5008"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). \",\"code\":\"5008\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        \n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            \n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Ethan","lname":"Fitzpatrick","address":"39 Alpine Road","city":"Montville","state":"NJ","zip":"07082","dateOfBirth":"1980-06-01"}}} {
+  "fname": "Ethan",
+  "lname": "Fitzpatrick",
+  "birthday": "1980-06-01",
+  "address": "39 Alpine Road",
+  "city": "Montville",
+  "state": "NJ",
+  "postalCode": "07082"
+}
+2023-07-30 20:41:10 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "622aba525345183e8ab83072",
+  "link": "tjpm",
+  "firstName": "Ethan",
+  "lastName": "Fitzpatrick",
+  "birthday": "1980-06-01T00:00:00.000Z",
+  "email": "Ethan6180@hotmail.com",
+  "additionalEmail": "",
+  "phone": "6093064218",
+  "applicantIp": "3.209.197.45",
+  "currentAddress": "39 Alpine Rd, Towaco, NJ, USA",
+  "insuranceType": "Home",
+  "selectedPolicies": [
+    "Home"
+  ],
+  "isAnswerRiskQuestions": false
+}
+2023-07-30 20:41:56 error: Branch.getBranch err Error: {"message":"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). ","code":"5008"}: {"response":{"errors":[{"message":"{\"message\":\"Error event error: Error: Not in a live state (AL/AR/AZ/CO/DC/GA/IA/ID/IL/IN/KS/KY/LA/MA/MD/ME/MI/MO/MS/MT/ND/NE/NH/NM/OH/OK/OR/PA/SC/SD/TN/TX/UT/VA/VT/WI/WV/WY). \",\"code\":\"5008\"}","path":["requestQuote"]}],"data":{"requestQuote":null},"status":200,"headers":{}},"request":{"query":"\n      query RequestQuote(\n        $fname: String!\n        $lname: String!\n        $dateOfBirth: String!\n        $address: String!\n        $city: String!\n        $state: String!\n        $zip: String!\n        $priorAddress: String!\n              $priorCity: String!\n              $priorState: String!\n              $priorZip: String!\n      ) {\n        requestQuote(\n          userInput: {\n            fname: $fname\n            lname: $lname\n            dateOfBirth: $dateOfBirth\n            address: $address\n            city: $city\n            state: $state\n            zip: $zip\n            priorAddress: {\n                    address: $priorAddress\n                    city: $priorCity\n                    state: $priorState\n                    zip: $priorZip\n                  }\n            \n          }\n        ) {\n          id\n          options {\n            id\n            type\n            description\n            homeTotal\n            autoTotal\n          }\n\n          quote {\n            drivers {\n              id\n              isPrimary\n              isCoApplicant\n              firstName\n              middleName\n              lastName\n              suffix\n              gender\n              maritalStatus\n              highestEducation\n              age\n              driversLicenseState\n              ageFirstLicensed\n              fullTimeStudent\n              goodStudent\n              takenCourse\n              schoolName\n              schoolZip\n              addDate\n              excludeDriver\n              communityDriveParticipation\n              postBindMVR\n              hasUDR\n              nonUDRIncidentCount\n            }\n            cars {\n              VIN\n              year\n              make\n              model\n              primaryUse\n              purchaseDate\n              garageLocation {\n                address\n                address2\n                city\n                state\n                zip\n              }\n              deductibleCollision\n              deductibleComprehensive\n              limitUMPD\n              limitRental\n              limitACPE\n              roadsideAssistance\n              rideSharing\n              image\n              aebStatus\n              aebConfirmed\n              antiTheftStatus\n              antiTheftConfirmed\n              blindSpotStatus\n              blindSpotConfirmed\n              coverageLoan\n            }\n          }\n        }\n      }\n    ","variables":{"fname":"Ethan","lname":"Fitzpatrick","address":"16 Clinton Road","city":"Fairfield","state":"NJ","zip":"07004","dateOfBirth":"1980-06-01","priorAddress":"39 Alpine Road","priorCity":"Montville","priorState":"NJ","priorZip":"07082"}}} {
+  "fname": "Ethan",
+  "lname": "Fitzpatrick",
+  "birthday": "1980-06-01",
+  "address": "16 Clinton Road",
+  "city": "Fairfield",
+  "state": "NJ",
+  "postalCode": "07004",
+  "mailingAddress": {
+    "address": "39 Alpine Road",
+    "state": "NJ",
+    "city": "Montville",
+    "postalCode": "07082"
+  }
+}
+2023-07-30 20:42:54 info: [object Object]
+2023-07-30 20:45:24 info: InsuranceQuoteService.requestFormApply.createNewQuoteRequest  {
+  "user": "622aba525345183e8ab83072",
+  "link": "tjpm",
+  "birthday": "1970-01-01T00:00:00.000Z",
+  "applicantIp": "3.209.197.45",
+  "currentAddressComponent": {
+    "street": "39 Alpine Road",
+    "city": "Montville",
+    "state": "NJ",
+    "postalCode": "07082",
+    "county": "Morris County",
+    "countryCode": "US"
+  },
+  "propertyAddressComponent": {
+    "street": "16 Clinton Road",
+    "city": "Fairfield",
+    "state": "NJ",
+    "postalCode": "07004",
+    "county": "Essex County",
+    "countryCode": "US"
+  },
+  "isAnswerRiskQuestions": false,
+  "householdMembers": [
+    {
+      "firstName": "Ethan",
+      "lastName": "Fitzpatrick",
+      "birthday": "1980-06-01T00:00:00.000Z",
+      "license": "",
+      "gender": "Male",
+      "relation": "Primary",
+      "state": ""
+    },
+    {
+      "firstName": "Justyna",
+      "lastName": "Korczeniewska",
+      "birthday": "1979-03-07T05:00:00.000Z",
+      "license": "",
+      "gender": "Female",
+      "relation": "Spouse",
+      "state": ""
+    }
+  ],
+  "householdCars": []
+}
